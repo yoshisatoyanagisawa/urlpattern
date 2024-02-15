@@ -25,7 +25,7 @@ spec: URL; urlPrefix: https://url.spec.whatwg.org/
 
 <h2 id=urlpattern-class>The {{URLPattern}} class</h2>
 
-A {{URLPattern}} consists of several [=components=], each of which represents a [=/pattern string|pattern=] which could be matched against the corresponding component of a [=/URL=].
+A {{URLPattern}} has an associated [=URL Pattern=], which consists of several [=components=], each of which represents a [=/pattern string|pattern=] which could be matched against the corresponding component of a [=/URL=].
 
 It can be constructed using a string for each component, or from a shorthand string. It can optionally be resolved relative to a base URL.
 
@@ -224,21 +224,21 @@ dictionary URLPatternComponentResult {
 };
 </xmp>
 
-Each {{URLPattern}} object has an associated <dfn for=URLPattern>protocol component</dfn>, a [=component=], which must be set upon creation.
+Each [=URL Pattern=] struct has an associated <dfn for=URLPattern>protocol component</dfn>, a [=component=], which must be set upon creation.
 
-Each {{URLPattern}} object has an associated <dfn for=URLPattern>username component</dfn>, a [=component=], which must be set upon creation.
+Each [=URL Pattern=] struct has an associated <dfn for=URLPattern>username component</dfn>, a [=component=], which must be set upon creation.
 
-Each {{URLPattern}} object has an associated <dfn for=URLPattern>password component</dfn>, a [=component=], which must be set upon creation.
+Each [=URL Pattern=] struct has an associated <dfn for=URLPattern>password component</dfn>, a [=component=], which must be set upon creation.
 
-Each {{URLPattern}} object has an associated <dfn for=URLPattern>hostname component</dfn>, a [=component=], which must be set upon creation.
+Each [=URL Pattern=] struct has an associated <dfn for=URLPattern>hostname component</dfn>, a [=component=], which must be set upon creation.
 
-Each {{URLPattern}} object has an associated <dfn for=URLPattern>port component</dfn>, a [=component=], which must be set upon creation.
+Each [=URL Pattern=] struct has an associated <dfn for=URLPattern>port component</dfn>, a [=component=], which must be set upon creation.
 
-Each {{URLPattern}} object has an associated <dfn for=URLPattern>pathname component</dfn>, a [=component=], which must be set upon creation.
+Each [=URL Pattern=] struct has an associated <dfn for=URLPattern>pathname component</dfn>, a [=component=], which must be set upon creation.
 
-Each {{URLPattern}} object has an associated <dfn for=URLPattern>search component</dfn>, a [=component=], which must be set upon creation.
+Each [=URL Pattern=] struct has an associated <dfn for=URLPattern>search component</dfn>, a [=component=], which must be set upon creation.
 
-Each {{URLPattern}} object has an associated <dfn for=URLPattern>hash component</dfn>, a [=component=], which must be set upon creation.
+Each [=URL Pattern=] struct has an associated <dfn for=URLPattern>hash component</dfn>, a [=component=], which must be set upon creation.
 
 <dl class="domintro non-normative">
   <dt><code>|urlPattern| = new {{URLPattern/constructor(input, baseURL, options)|URLPattern}}(|input|)</code></dt>
@@ -449,7 +449,9 @@ Each {{URLPattern}} object has an associated <dfn for=URLPattern>hash component<
 
 <h3 id=urlpattern-internals>Internals</h3>
 
-A {{URLPattern}} is associated with multiple <dfn>component</dfn> [=structs=].
+A {{URLPattern}} has an associated <dfn>URL pattern</dfn> [=structs=].
+
+A [=URL pattern=] is associated with multiple <dfn>component</dfn> [=structs=].
 
 A [=component=] has an associated <dfn for=component>pattern string</dfn>, a [=pattern string/well formed=] [=/pattern string=], which must be set upon creation.
 
